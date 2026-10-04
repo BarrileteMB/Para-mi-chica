@@ -1,0 +1,30 @@
+<!-- FOTOS -->
+    <div class="photo p1"><img src="./imagenes/1.PNG" alt="Nuestro recuerdo 1"></div>
+    <div class="photo p2"><img src="./imagenes/2.JPG" alt="Nuestro recuerdo 2"></div>
+    <div class="photo p3"><img src="./imagenes/3.JPG" alt="Nuestro recuerdo 3"></div>
+    <div class="photo p4"><img src="./imagenes/4.JPG" alt="Nuestro recuerdo 4"></div>
+    <div class="photo p5"><img src="./imagenes/5.JPG" alt="Nuestro recuerdo 5"></div>
+    <div class="photo p6"><img src="./imagenes/6.jpeg" alt="Nuestro recuerdo 6"></div>
+    <div class="photo p7"><img src="./imagenes/7.jpeg" alt="Nuestro recuerdo 7"></div>
+
+
+    <!-- CARTA -->
+
+    <article class="note">
+
+        <h2>
+            Para mi amor
+        </h2>
+            Hola amor, venía a decirte que etoy muy feliz de poder haberte conocido. 
+        <p>
+            No me esperaba que aquel día en el que hablamos por primera vez habŕia conocido a quien hace de mis días mas felices,
+            que la primera cosa en la que pensaría por las mañanas sería en ti; que ,a pesar de la distancia, te sienta tan cerca.
+        </p>
+        <p>
+            Quiero que sepas que me siento muy afortunado de tenerte a mi lado y espero ser capaz de hacerte feliz todos los días de mi vida.
+        </p>
+        <p>
+            Te quiero mucho, mi princesa.
+        </p>
+
+    </article>
