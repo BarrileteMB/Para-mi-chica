@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para mi chica ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            overflow: hidden;
+        }
+
+        .login-box {
+            width: 90%;
+            max-width: 380px;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .heart {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #ff7b81;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: #ff6f7d;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #ff5263;
+            transform: scale(1.02);
+        }
+
+        #error {
+            color: #e63946;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .footer {
+            margin-top: 25px;
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        .hello-kitty img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-box">
+
+        <div class="hello-kitty">
+            <img src="./imagenes/hello-kittie.png" alt="Hello Kitty">
+        </div>
+
+        <h1>Te tengo una sorpresa</h1>
+
+
+        <input
+            type="text"
+            id="usuario"
+            placeholder="Usuario"
+            autocomplete="off"
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Contraseña"
+        >
+
+        <button onclick="iniciarSesion()">
+            Entrar ❤️
+        </button>
+
+        <p id="error">
+            Usuario o contraseña incorrectos 💔
+        </p>
+
+        <div class="footer">
+            Hecho especialmente para ti
+        </div>
+
+    </div>
+
+    <script>
+        function iniciarSesion() {
+
+            const usuario = document.getElementById("usuario").value;
+            const password = document.getElementById("password").value;
+
+            // DATOS USUAIRO
+            const usuarioCorrecto = "Carla";
+            const passwordCorrecta = "11/9";
+
+            if (
+                usuario === usuarioCorrecto &&
+                password === passwordCorrecta
+            ) {
+
+                // Página a la que irá después de iniciar sesión
+                window.location.href = "bienvenida.html";
+
+            } else {
+
+                document.getElementById("error").style.display = "block";
+
+            }
+        }
+    </script>
+
+</body>
+</html>
