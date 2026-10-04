@@ -160,17 +160,22 @@ body {
     left: 50%;
     top: 50%;
 
-    /* Carta más pequeña */
-    width: 68vw;
-    max-width: 360px;
+    /*
+       La carta ocupa prácticamente toda
+       la zona central del móvil.
+    */
+    width: min(82vw, 520px);
 
-    /* Mucho más alta respecto a su anchura */
-    height: 72vh;
-    max-height: 620px;
+    /*
+       Altura adaptable a la pantalla.
+    */
+    height: min(72dvh, 650px);
 
-    min-height: 0;
+    min-height: 420px;
 
-    padding: 28px 22px 75px 22px;
+    padding:
+        clamp(28px, 7vw, 40px)
+        clamp(22px, 6vw, 35px);
 
     transform:
         translate(-50%, -50%)
@@ -199,10 +204,38 @@ body {
         cubic-bezier(.2,.8,.2,1)
         forwards;
 
-    /* IMPORTANTE:
-       ya no hacemos scroll */
-    overflow: hidden;
+    /*
+       Permite desplazarse dentro de la carta
+       si el texto es demasiado largo.
+    */
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: thin;
 }
+
+@keyframes noteAppear {
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(-8deg)
+            scale(.45);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(-1.5deg)
+            scale(1);
+    }
+}
+
 
 /* Borde interior de la carta */
 
@@ -228,16 +261,17 @@ body {
 .note h2 {
     position: relative;
 
-    margin-bottom: 16px;
+    margin-bottom: 22px;
 
     text-align: center;
 
-    font-size: 21px;
+    font-size: clamp(21px, 6vw, 28px);
 
     font-weight: normal;
 
     color: #bb4267;
 }
+
 
 /* =====================================================
    TEXTO
@@ -246,11 +280,11 @@ body {
 .note p {
     position: relative;
 
-    margin-bottom: 14px;
+    margin-bottom: 18px;
 
-    font-size: 14px;
+    font-size: clamp(15px, 4.2vw, 18px);
 
-    line-height: 1.55;
+    line-height: 1.75;
 
     white-space: normal;
 
@@ -259,6 +293,7 @@ body {
     color: #67444e;
 }
 
+
 /* =====================================================
    HELLO KITTY
 ===================================================== */
@@ -266,15 +301,17 @@ body {
 .hello-kittie {
     position: absolute;
 
-    right: 12px;
-    bottom: 8px;
+    right: 14px;
+    bottom: 12px;
 
-    width: 58px;
+    /*
+       Tamaño adaptable al móvil.
+    */
+    width: clamp(55px, 18vw, 85px);
+
     height: auto;
 
-    max-width: 20%;
-
-    z-index: 10;
+    z-index: 3;
 
     pointer-events: none;
 
@@ -286,6 +323,7 @@ body {
             rgba(100, 35, 55, .18)
         );
 }
+
 
 /* =====================================================
    FOTOS
@@ -592,11 +630,19 @@ body {
 ===================================================== */
 
 @media (max-width: 380px) {
-     .note {
+
+    .note {
         width: 84vw;
+
         height: 70dvh;
+
         min-height: 390px;
+
+        padding:
+            25px
+            20px;
     }
+
     .note h2 {
         font-size: 21px;
         margin-bottom: 18px;
@@ -623,6 +669,11 @@ body {
 ===================================================== */
 
 @media (max-height: 700px) {
+
+    .note {
+        height: 75dvh;
+        min-height: 380px;
+    }
 
     .photo {
         width: 20vw;
